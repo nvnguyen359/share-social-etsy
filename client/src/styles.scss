@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-root {
+    height: 100%;
+    overflow: hidden;
+}
+
+.active {
+    background-color: var(--mat-stepper-header-selected-state-icon-background-color) !important;
+    color: whitesmoke !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mes{
+    position: fixed;
+    z-index: 12;
+    bottom: 0;
+    left: 15px;
+}
