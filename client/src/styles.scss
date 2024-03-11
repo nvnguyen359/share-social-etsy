@@ -21,11 +21,24 @@ body {
     background-color: var(--mat-stepper-header-selected-state-icon-background-color) !important;
     color: whitesmoke !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mes{
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mes {
     position: fixed;
     z-index: 12;
     bottom: 0;
     left: 15px;
+}
+
+#message {
+    padding-left: 15px;
 }

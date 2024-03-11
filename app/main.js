@@ -19,7 +19,7 @@ const pathServer = path.join(__dirname, "server.js");
 const lib = require("./shares/lib");
 const movepath = app.getPath("userData");
 lib.setEnvValue("localDatabase", movepath);
-process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
+process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 let curWindow;
 let tray;
 //Basic flags
@@ -39,7 +39,7 @@ app.whenReady().then(() => {
   });
 
   autoUpdater.checkForUpdates();
-  mes = `Đang kiểm tra các bản cập nhật. Phiên bản hiện tại :${app.getVersion()}`; 
+  mes = `Đang kiểm tra các bản cập nhật. Phiên bản hiện tại :${app.getVersion()}`;
   curWindow.showMessage(mes);
   lib.setEnvValue("ver", `${mes}`);
 });
@@ -84,7 +84,7 @@ const openWindow = () => {
 };
 app.on("window-all-closed", function () {
   if (process.platform != "darwin") {
-    let icon = path.join(__dirname,"./img/electron.png");
+    let icon = path.join(__dirname, "./img/electron.png");
     tray = new Tray(icon);
 
     const contextMenu = Menu.buildFromTemplate([
