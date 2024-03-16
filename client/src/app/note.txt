@@ -1,0 +1,6 @@
+
+ng g m schedule --route schedule --module app
+ng g m tableExpandableRows --route tableExpandableRows --module app
+ng g m listOrders --route listOrders --module app
+https://transform.tools/json-to-typescript
+https://itecnote.com/tecnote/angular-electron-white-screen-after-reload-page/

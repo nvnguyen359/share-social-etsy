@@ -1,5 +1,5 @@
 <div class="menu" cdkMenu style="margin-top: 2px;">
     <button *ngFor="let item of links; let i= index" [routerLink]="item.link" data-id="{{item.link}}" class="menu-item" matRipple 
       id="id-{{i}}" cdkMenuItem>
-      <mat-icon>{{item.icon}}</mat-icon>&nbsp;<span>{{item.text}}</span></button>
+      <mat-icon class="mat-icon-1">{{item.icon}}</mat-icon>&nbsp;<span>{{item.text}}</span></button>
   </div>

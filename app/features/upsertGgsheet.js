@@ -2,8 +2,8 @@
 const { delay } = require("../shares/lib");
 const { CRUDKNEX } = require("./crudKnex");
 const { CRUD } = require("./crud");
-const schedule = require("node-schedule");
-const knex = require("knex");
+
+
 require("colors");
 const run = async () => {
   const crudKnex = new CRUDKNEX();

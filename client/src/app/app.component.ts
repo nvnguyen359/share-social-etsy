@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
-import { ApiService } from './services/api.service';
+import { Component } from "@angular/core";
+import { ApiService } from "./services/api.service";
+import { Route } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
   showFiller = false;
-  title = 'client';
-  constructor(private service:ApiService){
-
-  }
-
-  onClose() {
+  title = "client";
+  constructor(private service: ApiService) {
    
   }
+
+  onClose() {}
   onCloseWindow() {
     this.service.eventWindow("close").then((e: any) => console.log(e));
   }

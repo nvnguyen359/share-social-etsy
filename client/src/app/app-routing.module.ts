@@ -20,16 +20,28 @@ const routes: Routes = [
         (m) => m.ManageShareModule
       ),
   },
+  // {
+  //   path: '',
+  //   redirectTo: `/${ApiUrl.Dashboard}`, pathMatch: 'full'
+  // },
   {
-    path: ApiUrl.Home,
+    path: ApiUrl.Listings,
     loadChildren: () =>
-      import("./pages/report/report.module").then((m) => m.ReportModule),
+      import("./pages/listings/listings.module").then((m) => m.ListingsModule),
   },
   {
-    path: "",
+    path: ApiUrl.Schedule,
     loadChildren: () =>
-      import("./pages/report/report.module").then((m) => m.ReportModule),
+      import("./pages/schedule/schedule.module").then((m) => m.ScheduleModule),
   },
+  {
+    path: ApiUrl.Dashboard,
+    loadChildren: () =>
+      import("./pages/dashboard/dashboard.module").then(
+        (m) => m.DashboardModule
+      ),
+  },
+  { path: ApiUrl.Account, loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule) },
 ];
 
 @NgModule({

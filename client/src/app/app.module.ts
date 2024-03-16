@@ -43,8 +43,11 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { SpinnerComponent } from "./components/spinner/spinner.component";
 import { LoadingInterceptor } from "./interceptors/loading.interceptor";
+import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
+
+
 @NgModule({
-  declarations: [AppComponent, SpinnerComponent],
+  declarations: [AppComponent, SpinnerComponent, DialogConfirmComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

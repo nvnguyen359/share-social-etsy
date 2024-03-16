@@ -1,39 +1,48 @@
 export enum ApiUrl {
-  Home = "home",
+  Home = "",
   Report = "report",
   Share = "share",
   Socials = "socials",
   ReportShare = "report-share",
+  Listings = "listings",
+  Schedule = "schedule",
+  Dashboard = "dashboard",
+  Account = "account",
 }
 var links = [
   {
-    text: "Trang Chủ",
+    text: "Home",
     link: `/${ApiUrl.Home}`,
     icon: "home",
   },
   {
-    text: "Share",
-    link: `/${ApiUrl.Share}`,
-    icon: "share",
+    text: "Listings",
+    link: `/${ApiUrl.Listings}`,
+    icon: "grade",
   },
   {
-    text: "Mạng Xã Hội",
-    link: `/${ApiUrl.Socials}`,
-    icon: "people",
+    text: "Account",
+    link: `/${ApiUrl.Account}`,
+    icon: "account_circle",
   },
   {
-    text: "Tiến Trình share",
-    link: `/${ApiUrl.ReportShare}`,
+    text: "Schedule",
+    link: `/${ApiUrl.Schedule}`,
     icon: "schedule",
+  },
+  {
+    text: "Dashboard",
+    link: `/${ApiUrl.Dashboard}`,
+    icon: "dashboard",
   },
 ];
 export default links;
 
-export var baseServer=`http://localhost:3178/api`;
-export function capitalizeFirstLetter(string:any) {
+export var baseServer = `http://localhost:3178/api`;
+export function capitalizeFirstLetter(string: any) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-export function removeAccents(str:any) {
+export function removeAccents(str: any) {
   return `${str}`
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")

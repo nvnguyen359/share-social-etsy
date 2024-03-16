@@ -3,7 +3,8 @@
 
 require("dotenv").config({ path: "./../.env" });
 const { getListPrinter, allApisPrinter } = require("./apis/apiInfo");
-require('./features/upsertGgsheet')
+const {sheduleListings}= require("./apis/sheduleListings")
+//require('./features/upsertGgsheet')
 const fs= require('fs')
 var bodyParser = require("body-parser");
 const path = require("path");
@@ -74,6 +75,7 @@ app.use(express.static("public"));
 // apis.callApis(app);
 apisSqlite(app);
 allApisPrinter(app);
+sheduleListings(app);
 app.use("/uploads", express.static("uploads"));
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/imgs", express.static(path.join(__dirname, "imgs")));
@@ -88,4 +90,6 @@ app.get("/", (req, res, next) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+
 module.exports = app;

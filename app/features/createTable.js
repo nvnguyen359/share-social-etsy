@@ -1,13 +1,14 @@
-const createTableShare = async (knex) => {
+const createTableListings = async (knex) => {
   try {
-    const tbl = "share";
+    const tbl = "listings";
     const hasTable = await knex.schema.hasTable(tbl);
     if (hasTable) {
       //  console.log(tbl, "already exist!");
       return tbl;
     }
     await knex.schema.createTable(tbl, (table) => {
-      table.string("name", 250);
+      table.string("image");
+      table.string("title", 250);
       table.integer("idlisting").notNullable();
       table.string("link");
       table.string("content");
@@ -22,17 +23,17 @@ const createTableShare = async (knex) => {
   }
 };
 
-const createTableManageShare = async (knex) => {
+const createTableSchedule = async (knex) => {
   try {
-    const tbl = "manageShare";
+    const tbl = "schedule";
     const hasTable = await knex.schema.hasTable(tbl);
     if (hasTable) {
       //  console.log(tbl, "already exist!");
       return tbl;
     }
     await knex.schema.createTable(tbl, (table) => {
-      table.integer("idShare").notNullable();
-      table.integer("countShare");
+      table.integer("idListing").notNullable();
+      table.integer("count");
       table.string("status");
       exoend(table);
     });
@@ -55,7 +56,8 @@ const createTableSocials = async (knex) => {
       table.string("userName");
       table.string("password");
       table.string("cookies");
-      table.integer("idParents")
+      table.integer("idParents");
+      table.integer("url")
       exoend(table);
     });
     // console.log(tbl, "successfully created");
@@ -64,6 +66,7 @@ const createTableSocials = async (knex) => {
     console.error(error.message);
   }
 };
+
 const exoend = (table) => {
   table.increments("id", {
     primaryKey: true,
@@ -76,9 +79,9 @@ const initTable = async (knex) => {
   return new Promise(async (res, rej) => {
     let tables = [];
     // await createUsersTable(knex);
-    let tb = await createTableShare(knex);
+    let tb = await createTableListings(knex);
     tables.push(tb);
-    tb = await createTableManageShare(knex);
+    tb = await createTableSchedule(knex);
     tables.push(tb);
     tb = await createTableSocials(knex);
     tables.push(tb);

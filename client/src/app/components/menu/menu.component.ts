@@ -47,6 +47,8 @@ export class MenuComponent {
             btn.classList.remove("active");
           });
           btn.classList.add("active");
+          //console.log(btn.getAttribute('ng-reflect-router-link'))
+         localStorage.setItem('urlactive',btn.getAttribute('ng-reflect-router-link')+'')
           localStorage.setItem("menu", `${index}`);
         });
       }

@@ -10,10 +10,10 @@ const {
 } = require("electron");
 const electron = require("electron");
 require("dotenv").config();
-
+const { autoUpdater, AppUpdater } = require("electron-updater");
 const MainScreen = require("./screens/main/mainScreen");
 const Globals = require("./globals");
-const { autoUpdater, AppUpdater } = require("electron-updater");
+
 const path = require("path");
 const pathServer = path.join(__dirname, "server.js");
 const lib = require("./shares/lib");
@@ -28,9 +28,10 @@ autoUpdater.autoInstallOnAppQuit = true;
 
 function createWindow() {
   curWindow = new MainScreen();
+  app.serve = require(pathServer);
 }
 let mes = "";
-app.serve = require(pathServer);
+
 app.whenReady().then(() => {
   createWindow();
 
